@@ -1,14 +1,16 @@
 # SONIQCX experience
 
-A Scrollcraft-directed, native-scroll brand experience. The Q opens into nine depth layers and resolves, followed by business outcomes, SONIQ AI, leadership, and a clear conversation action. The opening runs automatically without audio or video controls.
+A complete, multi-page SONIQCX rebuild using the Scrollcraft Signal publication direction. The graphic opening leads into a native-scroll signal field that resolves into Convert, Retain, and Grow. All 47 original pages are represented, with an additional team directory and service index.
 
-- `app/experience.tsx`: content, navigation, motion preference, Scrollcraft integration.
-- `app/signal-scene.ts`: exact-brand WebGL geometry, materials and rendering lifecycle.
-- `app/signal-pose.ts`: shared choreography for WebGL and CSS 3D fallback.
-- `scrollcraft/builds/soniqcx/BRIEF.md`: brand evidence and authored spatial score.
-- `scrollcraft/builds/soniqcx/VERIFICATION.md`: actual review evidence and remaining device limitations.
+- `app/experience.tsx`: home page and Scrollcraft choreography.
+- `app/spectrum.tsx`: native-resolution abstract signal canvas.
+- `app/pages-content.tsx`: individually composed company and technology pages.
+- `app/source-content.json`: all original content, including 36 service and insight pages.
+- `app/team-grid.tsx` and `app/leaders.json`: five official portraits and complete biographies.
+- `app/application-form.tsx` and `app/api/apply/route.ts`: validated applications forwarded to the existing SONIQCX recruitment service.
+- `scrollcraft/builds/soniqcx-v2/`: creative brief, content map, and verification evidence.
 
-The original Scrollcraft engine is copied unchanged. Calendly and other calls to action use SONIQCX's existing destinations. No form submission, messaging, or external account access was performed.
+The original Scrollcraft engine is unchanged. Calendly, Voice AI, and agent/admin portals retain the original destinations. No applications or bookings were sent during testing.
 
 ## Framework operations
 

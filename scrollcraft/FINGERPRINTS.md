@@ -30,6 +30,7 @@ changes only grammar and world will fail it.
 |---|---|---|---|---|---|---|---|---|
 
 | SONIQCX · 2026-09-11 | Signal assembly | Fixed direct anchors + mobile drawer | One 2.7svh-span physical Q assembly | Pin → flow/in → reveal → parallax → kinetic | Held blue typographic invitation | Exact Q separates into nine depth slices, then resolves | Charcoal, brand blue, cool silver, Archivo | Managed Sites preview |
+| SONIQCX v2 · 2026-09-11 | Signal publication | Fixed multi-page directory and contextual links | Natural-flow graphic cover with independent signal planes | Parallax → diagnostic reveal → one process pin → operating ledger → kinetic systems → portrait strip | Stable split consulting / operations service desk | Conversation traces untangle into three outcome lanes | Graphite, original blue, Archivo, official portraits | Managed Sites preview |
 
 ---
 
@@ -43,6 +44,8 @@ as a constraint, so writing them down is the whole point.
 - SONIQCX claims the exact-Q assembly, one localized identity pin followed by an outcomes ledger, and the resolved blue invitation. First build: no prior rows share dimensions.
 
 ---
+
+- SONIQCX v2 claims the signal-publication grammar, three-lane conversation resolve, and two-path service close. Shares the established brand palette and typeface; differs from the earlier row in all six fingerprint dimensions.
 
 ## Appending a row
 

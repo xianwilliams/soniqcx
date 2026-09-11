@@ -1,0 +1,698 @@
+{
+  "checked": 60,
+  "total": 60,
+  "invalidApplication": {
+    "status": 400,
+    "body": {
+      "success": false,
+      "error": "Please complete all required fields."
+    }
+  },
+  "results": [
+    {
+      "path": "/",
+      "status": 200,
+      "h1": 1,
+      "title": "SONIQCX | Revenue lives here",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/justin.webp",
+        "/assets/preston.webp",
+        "/assets/ben.webp",
+        "/assets/kathy.webp",
+        "/assets/robby.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/soniq-ai",
+      "status": 200,
+      "h1": 1,
+      "title": "SONIQ AI | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/voice-ai",
+      "status": 200,
+      "h1": 1,
+      "title": "Voice AI | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/why-soniqcx",
+      "status": 200,
+      "h1": 1,
+      "title": "Why SONIQCX | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "h1": 1,
+      "title": "About | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/justin.webp",
+        "/assets/preston.webp",
+        "/assets/ben.webp",
+        "/assets/kathy.webp",
+        "/assets/robby.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/team",
+      "status": 200,
+      "h1": 1,
+      "title": "Our team | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/justin.webp",
+        "/assets/preston.webp",
+        "/assets/ben.webp",
+        "/assets/kathy.webp",
+        "/assets/robby.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "h1": 1,
+      "title": "Contact | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/careers",
+      "status": 200,
+      "h1": 1,
+      "title": "Careers | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/cx-courtroom",
+      "status": 200,
+      "h1": 1,
+      "title": "The CX Courtroom | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/privacy",
+      "status": 200,
+      "h1": 1,
+      "title": "Privacy policy | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/terms",
+      "status": 200,
+      "h1": 1,
+      "title": "Terms of service | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/resources",
+      "status": 200,
+      "h1": 1,
+      "title": "Services & insights | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/value-proposition",
+      "status": 200,
+      "h1": 1,
+      "title": "The SONIQCX value proposition | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/ai-customer-support-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "AI Customer Support Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/ai-vs-human-customer-support",
+      "status": 200,
+      "h1": 1,
+      "title": "AI vs Human Customer Support | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/call-center-outsourcing-cost",
+      "status": 200,
+      "h1": 1,
+      "title": "Call Center Outsourcing Cost | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/fintech-customer-support-outsourcing-vs-in-house",
+      "status": 200,
+      "h1": 1,
+      "title": "Fintech Customer Support Outsourcing vs In-House | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/fintech-customer-support-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "Fintech Customer Support Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/how-to-choose-customer-support-outsourcing-company",
+      "status": 200,
+      "h1": 1,
+      "title": "How to Choose a Customer Support Outsourcing Company | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/outcome-based-bpo-pricing",
+      "status": 200,
+      "h1": 1,
+      "title": "Outcome-Based BPO Pricing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/pay-for-performance-bpo-contracts",
+      "status": 200,
+      "h1": 1,
+      "title": "How Pay-for-Performance BPO Contracts Work | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/pay-for-performance-bpo",
+      "status": 200,
+      "h1": 1,
+      "title": "Pay-for-Performance BPO | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/pay-for-performance-call-center",
+      "status": 200,
+      "h1": 1,
+      "title": "Call Center Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-appointment-setting",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Appointment Setting Services | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-bpo-services",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based BPO Services | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-contact-center",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Contact Center | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-customer-retention",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Customer Retention Services | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-customer-service-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "Customer Service Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-customer-support",
+      "status": 200,
+      "h1": 1,
+      "title": "Customer Support Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-inbound-sales",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Inbound Sales Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-lead-qualification",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Lead Qualification Services | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-outbound-sales",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Outbound Sales Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-sales-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Sales Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/performance-based-upselling-cross-selling",
+      "status": 200,
+      "h1": 1,
+      "title": "Performance-Based Upselling & Cross-Selling | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/revenue-based-bpo-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "Revenue-Based BPO Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/revenue-share-bpo",
+      "status": 200,
+      "h1": 1,
+      "title": "Revenue Share BPO | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-bpo-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS BPO Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-bpo-vs-in-house-customer-operations",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS BPO vs In-House Customer Operations | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-customer-support-outsourcing-vs-in-house",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS Customer Support Outsourcing vs In-House | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-customer-support-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS Customer Support Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-customer-support-vs-technical-support",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS Customer Support vs Technical Support | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-sales-outsourcing-vs-in-house-sdr-team",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS Sales Outsourcing vs In-House SDR Team | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-sales-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS Sales Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/saas-technical-support-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "SaaS Technical Support Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/subscription-commerce-bpo",
+      "status": 200,
+      "h1": 1,
+      "title": "Subscription Commerce BPO | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/technical-support-outsourcing-vs-in-house",
+      "status": 200,
+      "h1": 1,
+      "title": "Technical Support Outsourcing vs In-House | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/technical-support-outsourcing",
+      "status": 200,
+      "h1": 1,
+      "title": "Technical Support Outsourcing | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/traditional-bpo-vs-pay-for-performance-bpo",
+      "status": 200,
+      "h1": 1,
+      "title": "Traditional BPO vs Pay-for-Performance BPO | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/page/why-hourly-bpo-pricing-fails",
+      "status": 200,
+      "h1": 1,
+      "title": "Why Hourly BPO Pricing Fails | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/index.php",
+      "status": 200,
+      "h1": 1,
+      "title": "SONIQCX | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/justin.webp",
+        "/assets/preston.webp",
+        "/assets/ben.webp",
+        "/assets/kathy.webp",
+        "/assets/robby.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/about.php",
+      "status": 200,
+      "h1": 1,
+      "title": "About | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/justin.webp",
+        "/assets/preston.webp",
+        "/assets/ben.webp",
+        "/assets/kathy.webp",
+        "/assets/robby.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/technology-ai.php",
+      "status": 200,
+      "h1": 1,
+      "title": "SONIQ AI | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/careers.php",
+      "status": 200,
+      "h1": 1,
+      "title": "Careers | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/the-cx-courtroom.php",
+      "status": 200,
+      "h1": 1,
+      "title": "The CX Courtroom | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/voice-ai.php",
+      "status": 200,
+      "h1": 1,
+      "title": "Voice AI | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/value-prop.php",
+      "status": 200,
+      "h1": 1,
+      "title": "The SONIQCX value proposition | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/sales-pitch-deck.php",
+      "status": 200,
+      "h1": 1,
+      "title": "Why SONIQCX | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/contact.php",
+      "status": 200,
+      "h1": 1,
+      "title": "Contact | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/privacy.php",
+      "status": 200,
+      "h1": 1,
+      "title": "Privacy policy | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    },
+    {
+      "path": "/terms.php",
+      "status": 200,
+      "h1": 1,
+      "title": "Terms of service | SONIQCX",
+      "images": [
+        "/assets/soniqcx.webp",
+        "/assets/soniqcx.webp",
+        "/assets/usbpoa.webp"
+      ]
+    }
+  ]
+}
