@@ -32,6 +32,8 @@ changes only grammar and world will fail it.
 | SONIQCX · 2026-09-11 | Signal assembly | Fixed direct anchors + mobile drawer | One 2.7svh-span physical Q assembly | Pin → flow/in → reveal → parallax → kinetic | Held blue typographic invitation | Exact Q separates into nine depth slices, then resolves | Charcoal, brand blue, cool silver, Archivo | Managed Sites preview |
 | SONIQCX v2 · 2026-09-11 | Signal publication | Fixed multi-page directory and contextual links | Natural-flow graphic cover with independent signal planes | Parallax → diagnostic reveal → one process pin → operating ledger → kinetic systems → portrait strip | Stable split consulting / operations service desk | Conversation traces untangle into three outcome lanes | Graphite, original blue, Archivo, official portraits | Managed Sites preview |
 
+| SONIQCX · Fluid performance · 2026-09-12 | Fluid atlas | Full seven-page desktop navigation + direct call CTA; compact drawer on phone | Centered original Q as a living 3D point surface; natural flow | Parallax identity → traced outcomes → interactive capability stage → 1.8vh-span brand-film scrub → flowing intelligence → operating pillars → portraits | Centered invitation and large settled wordmark | Official Q ripples locally under the pointer while its light field flows | Brand Book Night, SONIQ Blue, Super Blue, Seasalt, original Archivo | Managed Sites preview |
+
 ---
 
 ## What is taken
@@ -65,3 +67,5 @@ If you want to see what a filled-in table looks like, and which shapes tend to
 collide, read `EXAMPLES.md` in the scroll-craft repository. Treat it as
 illustration only: those rows are somebody else's builds and they do **not**
 constrain yours.
+
+- Fluid performance claims the fluid-atlas grammar and locally responsive point-surface Q. Shares the required brand and multipage content; differs from Signal assembly in 6/6 dimensions and Signal publication in 5/6.
