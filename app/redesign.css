@@ -85,3 +85,17 @@ html[data-motion=off] .hero-cover-stage .immersive-hero{transform:none;will-chan
 .podcast-player,.podcast-player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:760px){.nav-cta{font-size:.75rem;letter-spacing:0}.booking-return{font-size:.75rem}.booking-top{flex-wrap:wrap}.booking-top [data-slot=dialog-title]{font-size:1rem}}
 @media(max-width:360px){.brand{width:105px}.nav-right{gap:8px}.menu-button{padding-left:8px}.nav-cta{padding-inline:9px;font-size:.7rem}}
+/* Instrument-like navigation in the SONIQCX brand typeface. */
+.desktop-nav a,.site-menu nav a,.menu-button,.menu-foot a{font-family:ArchivoBrand,Archivo,Arial,sans-serif;font-weight:500;text-transform:uppercase;letter-spacing:.055em}
+.desktop-nav a{position:relative;padding-block:13px;font-size:.75rem;transition:color .25s,text-shadow .25s}
+.desktop-nav a:after,.site-menu nav a:after{content:'';position:absolute;left:0;right:0;bottom:5px;height:1px;background:linear-gradient(90deg,#61abbc,#f8f9fa 60%,transparent);transform:scaleX(0);transform-origin:left;opacity:0;transition:transform .3s,opacity .3s}
+.desktop-nav a:before,.site-menu nav a:before{content:'';position:absolute;width:3px;height:3px;left:0;bottom:4px;background:#61abbc;opacity:0;transition:opacity .25s,box-shadow .25s}
+.desktop-nav a:hover,.desktop-nav a:focus-visible,.desktop-nav a[aria-current=page],.site-menu nav a:hover,.site-menu nav a:focus-visible,.site-menu nav a[aria-current=page]{color:#86c2d0;text-shadow:0 0 14px #61abbc30}
+.desktop-nav a:hover:after,.desktop-nav a:focus-visible:after,.site-menu nav a:hover:after,.site-menu nav a:focus-visible:after{transform:scaleX(1);opacity:.8}
+.desktop-nav a[aria-current=page]:after,.site-menu nav a[aria-current=page]:after{transform:scaleX(.38);opacity:.6}
+.desktop-nav a[aria-current=page]:before,.site-menu nav a[aria-current=page]:before{opacity:1;box-shadow:0 0 9px #61abbc99}
+.desktop-nav a[aria-current=page]:hover:after,.site-menu nav a[aria-current=page]:hover:after{transform:scaleX(1)}
+.site-menu nav a{position:relative;padding-block:13px}.site-menu nav a svg{transition:transform .25s}.site-menu nav a:hover svg,.site-menu nav a:focus-visible svg{transform:translate(3px,-3px)}
+.menu-button{transition:color .25s}.menu-button:hover,.menu-button:focus-visible,.menu-button[data-state=open]{color:#86c2d0}.menu-button svg{transition:filter .25s}.menu-button:hover svg{filter:drop-shadow(0 0 5px #61abbc80)}
+.booking-frame{background:#f8f9fa}
+@media(min-width:1261px) and (max-width:1450px){.desktop-nav{gap:13px}.desktop-nav a{font-size:.75rem;letter-spacing:.025em}.site-header .brand{width:165px}.site-header{padding-inline:3%;gap:18px}.nav-cta{font-size:.75rem;padding-inline:14px}}
