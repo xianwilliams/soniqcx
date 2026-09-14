@@ -622,10 +622,13 @@
 
     // ---- video ------------------------------------------------------------
     function loadVideo(a) { loadClip(a.video); }
+    function staticMobileClip(V) {
+      return smallMQ.matches && V && V.host.hasAttribute("data-sc-mobile-static");
+    }
     function loadClip(V) {
       // Under reduced motion the clip is never fetched. The poster holds the
       // frame and the copy still cues, so the page reads without the decode.
-      if (reduce || !V || V.loading) return;
+      if (reduce || !V || V.loading || staticMobileClip(V)) return;
       var src = V.el.getAttribute('data-sc-src') ||
                 (isMobile() && V.el.getAttribute('data-sc-src-mobile')) ||
                 V.el.currentSrc || V.el.src;
@@ -997,7 +1000,7 @@
       var eps = isMobile() ? 0.02 : 0.008;
       for (var i = 0; i < playheads.length; i++) {
         var V = playheads[i];
-        if (!V.ready) continue;
+        if (!V.ready || staticMobileClip(V)) continue;
         // Never queue a seek while the decoder is still resolving the last one.
         // On a phone a fast flick otherwise piles seeks up and freezes the clip.
         // But a seek that never completes would freeze the clip for the life of
@@ -1042,6 +1045,7 @@
     // already where it should be.
     var primedCount = 0;
     function primeClip(V) {
+      if (staticMobileClip(V)) return;
       // priming guards the retry: play() is a promise, and calling it again
       // while the last one is unsettled produces "interrupted by pause" and can
       // leave the element playing.
