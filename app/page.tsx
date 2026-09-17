@@ -1,3 +1,2 @@
-export default function Home() {
-  return null;
-}
+import Experience from './experience';
+export default function Page(){return <Experience/>}

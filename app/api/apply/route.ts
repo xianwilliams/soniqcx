@@ -1,0 +1,15 @@
+const positions=new Set(['Inbound or Outbound Sales','Telemarketing','Appointment Setting or Lead Generation','Customer Service Voice or Digital','Technical Support Voice or Digital','Leadership or Administration']);
+const fields=['name','email','phone_country','phone','country','position','referral_source','currently_employed','start_date','newsletter_signup'];
+const response=(data:Record<string,unknown>,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store'}});
+export async function POST(request:Request){
+ const origin=request.headers.get('origin');if(origin&&origin!==new URL(request.url).origin)return response({success:false,error:'Please submit from the SONIQCX application page.'},403);
+ const length=Number(request.headers.get('content-length')||0);if(length>31*1024*1024)return response({success:false,error:'Your attachments are too large.'},413);
+ try{const input=await request.formData();for(const key of ['name','email','phone','country','position','referral_source']){const value=input.get(key);if(typeof value!=='string'||!value.trim()||value.length>300)return response({success:false,error:'Please complete all required fields.'},400)}
+ if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(input.get('email')))||!positions.has(String(input.get('position'))))return response({success:false,error:'Please check your email and position.'},400);
+ const cv=input.get('resume'),voice=input.get('audio');if(!(cv instanceof File)||!(voice instanceof File)||!cv.size||!voice.size)return response({success:false,error:'Please attach your resume and voice recording.'},400);
+ if(!/\.(pdf|doc|docx)$/i.test(cv.name)||cv.size>10*1024*1024||voice.size>20*1024*1024||(!voice.type.startsWith('audio/')&&!/\.(mp3|wav|m4a|aac|ogg|webm|aiff|flac)$/i.test(voice.name)))return response({success:false,error:'Please use a PDF or Word resume below 10 MB and an audio recording below 20 MB.'},400);
+ const output=new FormData();for(const key of fields){const value=input.get(key);if(typeof value==='string')output.set(key,value.trim())}output.set('resume',cv);output.set('audio',voice);output.set('applicant_name',String(input.get('name')));output.set('client_id','client-5ca1e8');output.set('tracking_id','px_46d4f1277d3a');output.set('submission_date',new Date().toISOString());
+ // Same recruitment destination and payload as the official careers page. No local storage or analytics.
+ const upstream=await fetch('https://dashboard.fdm.ooo/api/submit-job.php',{method:'POST',body:output,signal:AbortSignal.timeout(20000)});const result=await upstream.json() as {success?:boolean};if(!upstream.ok||result.success!==true)return response({success:false,error:'We could not confirm your application. Please try again, or use the application page at soniqcx.com/careers.php.'},502);return response({success:true});
+ }catch{return response({success:false,error:'We could not confirm your application. Please try again. If the problem continues, use the application page at soniqcx.com/careers.php.'},502)}
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "justin",
+    "name": "Justin Jones",
+    "title": "Founder and CEO",
+    "bio": "<p>Justin Jones is the Founder and CEO of SoniqCX, a customer experience company built on a simple belief: outcomes matter more than activity. He leads with a direct, people first approach and pushes the industry to rethink how contact centers create value.</p>\n        <p>Justin has spent his career challenging outdated metrics, broken processes, and the idea that customer service is a cost center. His focus is on measurable results, accountable leadership, and systems that lift both the customer and the teams who serve them.</p>\n        <p>At SoniqCX, he drives strategy, culture, and innovation with a commitment to operational clarity and real business impact. His work centers on building teams that deliver meaningful outcomes and strengthen the connection between customer experience and revenue growth.</p>\n        <p>Justin's leadership style is rooted in honesty, high standards, and a deep respect for the people doing the work. He is dedicated to building a company and a legacy his kids can be proud of.</p>",
+    "image": "/assets/justin.webp"
+  },
+  {
+    "id": "preston",
+    "name": "Preston Pollock",
+    "title": "Founder and Chief Operating Officer",
+    "bio": "<p>Preston is responsible for turning operational complexity into systems that scale. He builds and oversees the engine behind the onshore BPO operation: workflow design, workforce planning, compliance, technology, and performance operations. His work is grounded in a single belief: revenue lives in every interaction.</p>\n        <p>Before co-founding SoniqCX, Preston spent more than a decade leading high performing teams across collections, recovery, CX operations, disputes, and training at organizations including Vive Financial and Discover Financial Services. That experience shaped his ability to repair broken processes, elevate frontline performance, and develop leaders who make customer impact measurable.</p>\n        <p>At SoniqCX, Preston brings that background into data backed operating models that help brands scale with discipline. His focus is on aligning strategy with execution and ensuring every customer moment creates long term value.</p>\n        <p>Preston doesn't chase perfection. He builds performance rooted in clarity, accountability, and frontline insight.</p>",
+    "image": "/assets/preston.webp"
+  },
+  {
+    "id": "ben",
+    "name": "Benjamin Bohman",
+    "title": "Chief Technology Officer",
+    "bio": "<p>Benjamin (Ben) Bohman is the Chief Technology Officer for Soniq CX, bringing nearly 3 decades of technology expertise to the forefront of artificial intelligence innovation. His career exemplifies the intersection of technology leadership and human-centered design, backed by a strong foundation in psychology and organizational behavior.</p>\n        <h4>Manufacturing & Technology Leadership</h4>\n        <p>During his transformative 13-year tenure as an IT leader for an international printing company, Ben revolutionized their manufacturing operations through innovative technology solutions. He developed and implemented key systems that automated production tracking and workflow management, which were subsequently adopted by industry giants including the NFL and Anheuser-Busch. These systems demonstrated Ben's ability to translate complex manufacturing challenges into streamlined, automated solutions that drive efficiency and maintain quality at scale.</p>\n        <h4>Education and Human-Centered Approach</h4>\n        <p>With a bachelor's degree in psychology and ongoing pursuit of a master's in organizational psychology, Ben brings a unique perspective to technology leadership. This educational background enables him to:</p>\n        <ul>\n          <li>Bridge the gap between technical solutions and human needs</li>\n          <li>Design custom AI systems that enhance rather than replace human capabilities</li>\n          <li>Implement technology solutions with a deep understanding of organizational behavior and change management</li>\n        </ul>\n        <h4>Vision for AI Integration</h4>\n        <p>Ben's passion lies in helping companies leverage their internal data more effectively through AI integration. His work focuses on:</p>\n        <ul>\n          <li>Enhancing organizational decision-making processes through AI-driven insights</li>\n          <li>Creating clear pathways for businesses to adopt and benefit from AI technology</li>\n          <li>Ensuring AI solutions maintain ethical standards while driving innovation</li>\n          <li>Developing frameworks for sustainable AI implementation across various business sectors</li>\n        </ul>",
+    "image": "/assets/ben.webp"
+  },
+  {
+    "id": "kathy",
+    "name": "Kathy Mortensen",
+    "title": "SVP of Operations",
+    "bio": "<p>Kathy is a customer operations leader with more than twenty five years of experience building teams, scaling support functions, and transforming service organizations into true business growth engines. She has led large in house and BPO operations across fintech, telecommunications, automotive, healthcare, and high growth SaaS.</p>\n        <p>Before joining SoniqCX, Kathy built new service teams from the ground up, including a ninety person Member Satisfaction organization that hit a 4.2 out of 4.5 CSAT within months. She launched omnichannel environments, deployed AI to frontline teams, reduced response times from days to hours, and strengthened retention through data driven advocacy programs.</p>\n        <p>Kathy has overseen multi site operations across the United States and Mexico, negotiated major vendor contracts, and led six site BPO ecosystems for enterprise brands. She has repeatedly driven improvements in cost, quality, and customer experience by aligning Quality, WFM, Training, and Product teams around shared outcomes.</p>\n        <p>Her leadership philosophy is simple. Develop people. Use data to stay honest. Build systems that scale. And never lose sight of the customer.</p>\n        <p>At SoniqCX, Kathy leads operations with a focus on measurable outcomes, smarter support workflows, and a people first culture that creates promotable talent and consistent performance. She brings deep experience, high standards, and a calm, confident approach that elevates every team she touches.</p>",
+    "image": "/assets/kathy.webp"
+  },
+  {
+    "id": "robby",
+    "name": "Robby Horne",
+    "title": "Sales Manager",
+    "bio": "<p>Robby Horne brings over 20 years of experience building sales teams, developing talent, and driving results. Known for leading with respect and accountability, Robby has earned the trust of the teams he leads and has a reputation for bringing out the best in people.</p>\n        <p>At SoniqCX, he's a key part of building a sales culture that works hard, wins together, and takes care of its people.</p>",
+    "image": "/assets/robby.webp"
+  }
+]
