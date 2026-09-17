@@ -53,7 +53,8 @@ The original Scrollcraft engine is unchanged. Calendly, Voice AI, and agent/admi
 
 The home page includes a full-width performance screen stage, the looping brand
 film, and a SHIFT HAPPENS broadcast deck with a selectable waveform tuner.
-The stages support pointer depth, keyboard selection, pause controls and
+The compact stages unfold with normal scrolling and use decoded image
+crossfades. They support pointer depth, keyboard selection, pause controls and
 responsive phone layouts; the podcast deck also supports swipe. The podcast page features a thumbnail
 spotlight and searchable episode collection; it never autoplays a YouTube player.
 

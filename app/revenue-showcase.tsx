@@ -3,7 +3,9 @@ import {useEffect, useState} from 'react';
 import {ArrowUpRight, ChevronLeft, ChevronRight, Pause, Play, Expand} from 'lucide-react';
 import {Dialog, DialogContent, DialogTitle, DialogDescription} from '@/components/ui/dialog';
 import {useAmbient} from './use-ambient';
+import {useScrollStage} from './use-scroll-stage';
 import {useSurfaceMotion} from './use-surface-motion';
+import {FluidImage} from './fluid-image';
 import {CALL} from './chrome';
 const screens = [
   {id: 0, label: 'Performance', title: 'Make every outcome visible.', alt: 'SONIQ PULSE demonstration: team sales goals, analytics and agent rankings'},
@@ -16,6 +18,7 @@ export default function RevenueShowcase() {
   const {ref, moving} = useAmbient<HTMLElement>();
   const [active, setActive] = useState(0), [paused, setPaused] = useState(false), [hover, setHover] = useState(false), [open, setOpen] = useState(false);
   useSurfaceMotion(ref, moving);
+  useScrollStage(ref, moving);
   const running = moving && !paused && !hover && !open;
   useEffect(() => {
     if (!running) return;
@@ -31,7 +34,7 @@ export default function RevenueShowcase() {
       <div className="revenue-deck" aria-label="SONIQ PULSE product screenshots" onKeyDown={e => {if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {e.preventDefault(); select(active + (e.key === 'ArrowRight' ? 1 : -1));}}}>
         {[-1, 0, 1].map(offset => {const index = (active + offset + screens.length) % screens.length, item = screens[index];return <button key={offset} className={`revenue-screen revenue-screen-${offset === 0 ? 'center' : offset < 0 ? 'left' : 'right'}`} onClick={() => offset === 0 ? setOpen(true) : select(index)} title={offset === 0 ? `Enlarge ${item.label} screenshot` : `View ${item.label} screenshot`}>
           <span className="sr-only">{offset === 0 ? "Enlarge screenshot." : "Select screenshot."}</span><span className="revenue-screen-bar"><span>SONIQ<span>PULSE</span></span><span>{item.label}</span>{offset === 0 && <Expand size={17}/>}</span>
-          <span className="revenue-screen-image"><img key={item.id} src={`/assets/pulse-${item.id}-800.webp`} srcSet={`/assets/pulse-${item.id}-800.webp 800w, /assets/pulse-${item.id}-1440.webp 1440w`} sizes={offset === 0 ? '(max-width: 760px) 86vw, 58vw' : '28vw'} alt={item.alt} width="1440" height="1188" loading="lazy" decoding="async"/></span><span className="revenue-screen-foot"><span>Performance workspace</span><span>Demo view</span></span>
+          <span className="revenue-screen-image"><FluidImage src={`/assets/pulse-${item.id}-800.webp`} srcSet={`/assets/pulse-${item.id}-800.webp 800w, /assets/pulse-${item.id}-1440.webp 1440w`} sizes={offset === 0 ? '(max-width: 760px) 86vw, 58vw' : '28vw'} alt={item.alt} width="1440" height="1188" loading="lazy" decoding="async"/></span><span className="revenue-screen-foot"><span>Performance workspace</span><span>Demo view</span></span>
         </button>})}
       </div>
       <div className="revenue-selection"><p key={active}>{screen.title}</p><div className="instrument-arrows"><button aria-label="Previous screenshot" onClick={() => select(active - 1)}><ChevronLeft size={19}/></button><button aria-label="Next screenshot" onClick={() => select(active + 1)}><ChevronRight size={19}/></button><button aria-label={paused ? 'Resume screenshot rotation' : 'Pause screenshot rotation'} aria-pressed={paused} onClick={() => setPaused(p => !p)}>{paused ? <Play size={16}/> : <Pause size={16}/>}</button></div></div>

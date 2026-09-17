@@ -2,8 +2,10 @@
 import {useEffect, useRef, useState, type CSSProperties} from 'react';
 import {ArrowUpRight, ChevronLeft, ChevronRight, Pause, Play} from 'lucide-react';
 import {useAmbient} from '../use-ambient';
+import {useScrollStage} from '../use-scroll-stage';
 import {useSurfaceMotion} from '../use-surface-motion';
 import {useEpisodeFeed} from './use-feed';
+import {FluidImage} from '../fluid-image';
 import {thumbnail} from './thumbnail';
 export default function PodcastFeature() {
   const {ref, visible, moving} = useAmbient<HTMLElement>();
@@ -13,6 +15,7 @@ export default function PodcastFeature() {
   const index = active % episodes.length, episode = episodes[index];
   const running = moving && !paused && !engaged;
   useSurfaceMotion(ref, moving);
+  useScrollStage(ref, moving);
   useEffect(() => {
     if (!running) return;
     const timer = setInterval(() => setActive(i => (i + 1) % episodes.length), 7000);
@@ -27,7 +30,7 @@ export default function PodcastFeature() {
       <div className="broadcast-stage" role="group" aria-label="Featured podcast episodes" tabIndex={0} onKeyDown={e => {if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {e.preventDefault(); tune(index + (e.key === 'ArrowRight' ? 1 : -1));}}} onPointerDown={e => {if(e.pointerType !== 'mouse') touch.current={x:e.clientX,y:e.clientY};}} onPointerCancel={() => {touch.current=null;}} onPointerUp={e => {const start=touch.current;touch.current=null;if(start && Math.abs(e.clientX-start.x)>45 && Math.abs(e.clientX-start.x)>Math.abs(e.clientY-start.y)) tune(index+(e.clientX<start.x?1:-1));}}>
         <div className="broadcast-rings" aria-hidden="true"><i/><i/><i/></div>
         {[-1,0,1].map(offset => {const slot=(index+offset+episodes.length)%episodes.length, ep=episodes[slot];const Surface=offset===0?'div':'button';return <Surface key={offset} className={`broadcast-art broadcast-art-${offset===0?'center':offset<0?'left':'right'}`} onClick={offset ? () => tune(slot) : undefined} aria-label={offset===0 ? `Selected episode: ${ep.title}` : `Select episode: ${ep.title}`}>
-          <img key={ep.id} src={thumbnail(ep)} alt="" width="720" height="405" loading="lazy" decoding="async"/><span className="broadcast-art-edge" aria-hidden="true"/>{offset===0 && <span className="broadcast-duration">{ep.duration}</span>}
+          <FluidImage src={thumbnail(ep)} alt="" width="720" height="405" loading="lazy" decoding="async"/><span className="broadcast-art-edge" aria-hidden="true"/>{offset===0 && <span className="broadcast-duration">{ep.duration}</span>}
         </Surface>})}
         <a className="broadcast-play" href={watch} target="_blank" rel="noreferrer" aria-label={`Watch episode: ${episode.title} on YouTube`}><Play size={28} fill="currentColor"/><span>Watch episode</span></a>
       </div>

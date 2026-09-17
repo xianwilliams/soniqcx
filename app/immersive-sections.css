@@ -78,3 +78,86 @@ html[data-motion=off] .revenue-experience *,html[data-motion=off] .broadcast-exp
 @media(max-width:760px){.revenue-selection .instrument-arrows button:last-child{display:grid}.instrument-arrows button{width:44px;height:44px}.revenue-selection>p{flex:1;min-width:0;max-width:none}.revenue-switchboard{display:flex;flex-wrap:wrap;border-bottom:0}.revenue-switchboard button{flex:1 1 30%;min-height:72px;font-size:13px;border-bottom:1px solid #78959f6b}.revenue-switchboard button:nth-child(3){border-right:0}.revenue-switchboard button:nth-child(4),.revenue-switchboard button:nth-child(5){flex-basis:45%}.broadcast-now .instrument-arrows{width:93px}.broadcast-now .instrument-arrows button{width:44px;height:44px}.broadcast-selected-label{font-size:12px}.tuner-number{font-size:12px}}
 .revenue-screen-left .revenue-screen-image img,.revenue-screen-right .revenue-screen-image img,.broadcast-art-left img,.broadcast-art-right img{animation:poster-swap .4s ease-out}
 @keyframes poster-swap{from{opacity:.25}to{opacity:1}}
+
+/* Compact proportions: full-width surfaces, less visual and scrolling weight. */
+.revenue-experience{padding-top:42px}
+.revenue-prelude{font-size:20px}
+.revenue-heading h2{font-size:clamp(80px,10.5vw,168px);margin-top:12px;letter-spacing:-.065em}
+.revenue-instrument{margin-top:0;padding-top:20px}
+.revenue-deck{height:clamp(290px,25vw,370px)}
+.revenue-screen{width:44%;max-width:720px}
+.revenue-selection{margin:20px 4.5% 16px}
+.revenue-selection>p{font-size:clamp(18px,1.7vw,25px)}
+.revenue-switchboard button{min-height:64px;padding:14px 18px}
+.revenue-resolution{padding:25px 4.5% 34px;gap:5vw}
+.revenue-resolution p{font-size:16px;max-width:500px}
+.experience-cta-icon{width:50px;height:50px}
+.broadcast-experience{padding-top:34px}
+.broadcast-brand img{width:54px;height:54px}
+.broadcast-title{justify-content:flex-start;padding:24px 4.5% 0;font-size:clamp(58px,7vw,112px);letter-spacing:-.065em}
+.broadcast-console{margin-top:24px}
+.broadcast-stage{height:clamp(260px,25vw,370px);min-height:0;max-height:none}
+.broadcast-art{width:46%;max-width:750px}
+.broadcast-now{margin:24px 4.5% 12px;min-height:68px;gap:24px}
+.broadcast-now-copy{min-width:0;flex:1}
+.broadcast-now h3{font-size:clamp(21px,1.9vw,29px);line-height:1.15}
+.broadcast-tuner{height:96px}
+.tuner-bars{height:57px}.tuner-number{margin-top:3px}
+.broadcast-signoff{padding:24px 4.5% 32px}
+.broadcast-signoff .experience-cta{font-size:18px}
+.broadcast-play{padding:15px 22px}
+@media(max-width:1000px) and (min-width:761px){
+.revenue-screen{width:55%}.broadcast-art{width:58%}
+.revenue-switchboard button{padding:12px;gap:10px;font-size:14px}
+}
+@media(max-width:760px){
+.revenue-experience{padding-top:28px}
+.revenue-prelude{font-size:15px}.revenue-prelude span:last-child{font-size:12px}
+.revenue-heading h2{font-size:14vw;margin-top:12px}
+.revenue-instrument{padding-top:18px}.revenue-deck{height:280px}
+.revenue-screen{width:80%;max-width:none}
+.revenue-screen-bar{height:32px}.revenue-screen-bar>span:first-child{font-size:14px}
+.revenue-screen-bar>span:nth-child(2){font-size:10px}
+.revenue-screen-foot{padding-bottom:8px;font-size:10px}
+.revenue-selection{margin:16px 5% 14px;gap:12px}.revenue-selection>p{font-size:18px}
+.revenue-switchboard button{min-height:56px;padding:8px 5px;font-size:13px;gap:2px}
+.revenue-resolution{padding:20px 5% 26px}.revenue-resolution p{font-size:15px;margin-bottom:18px}
+.broadcast-experience{padding-top:26px}.broadcast-brand img{width:44px;height:44px}
+.broadcast-title{display:flex;gap:.18em;padding:24px 5% 0;font-size:9.3vw;line-height:1}
+.broadcast-title>span{display:inline}.broadcast-title>span:last-child{font-size:inherit;margin-top:0}
+.broadcast-console{margin-top:20px}.broadcast-stage{height:49vw;min-height:175px;max-height:330px}
+.broadcast-art{width:80%;max-width:none}.broadcast-play{width:50px;height:50px;padding:13px}
+.broadcast-now{margin:20px 5% 12px;min-height:94px;gap:14px}.broadcast-now h3{font-size:20px;margin-top:8px}
+.broadcast-selected-label{font-size:11px}.broadcast-tuner{height:128px}
+.tuner-bars{height:39px}.tuner-number{margin-top:0;font-size:11px}
+.broadcast-signoff{padding:20px 5% 26px}.broadcast-signoff p{font-size:14px;margin-bottom:18px}
+.broadcast-signoff .experience-cta{font-size:17px}.experience-cta-icon{width:46px;height:46px}
+}
+@media(max-width:380px){.revenue-deck{height:255px}.revenue-selection>p{font-size:17px}.broadcast-now h3{font-size:18px}}
+
+/* The stack unfolds as its section enters, then rests while it is explored. */
+.revenue-experience,.broadcast-experience{--fan-in:0px;--stage-lift:0px;--stage-pitch:0deg;--stage-scale:1;--title-shift:0px;--stage-opacity:1}
+.revenue-heading h2{transform:translateX(var(--title-shift))}
+.broadcast-title>span:first-child{transform:translateX(var(--title-shift))}
+.broadcast-title>span:last-child{transform:translateX(calc(var(--title-shift) * -1))}
+.revenue-deck,.broadcast-stage{transform:translateY(var(--stage-lift)) scale(var(--stage-scale));opacity:var(--stage-opacity);transform-origin:center}
+.revenue-screen,.broadcast-art{transition:filter .25s ease-out,opacity .25s ease-out}
+.revenue-screen-center{transform:translateX(-50%) rotateX(calc(var(--stage-pitch) + var(--tilt-x))) rotateY(var(--tilt-y))}
+.broadcast-art-center{transform:translateX(-50%) rotateX(calc(var(--stage-pitch) * -.65 + var(--tilt-x))) rotateY(var(--tilt-y))}
+.revenue-screen-left{transform:translateX(calc(-128% + var(--fan-in))) translateY(8%) rotateY(27deg) rotateZ(-7deg) scale(.7)}
+.revenue-screen-right{transform:translateX(calc(28% - var(--fan-in))) translateY(8%) rotateY(-27deg) rotateZ(7deg) scale(.7)}
+.broadcast-art-left{transform:translateX(calc(-129% + var(--fan-in))) rotateY(30deg) rotateZ(-6deg) scale(.72)}
+.broadcast-art-right{transform:translateX(calc(29% - var(--fan-in))) rotateY(-30deg) rotateZ(6deg) scale(.72)}
+@media(hover:hover) and (pointer:fine){.revenue-screen-left:hover{transform:translateX(calc(-128% + var(--fan-in))) translateY(8%) rotateY(27deg) rotateZ(-7deg) scale(.7)}.revenue-screen-right:hover{transform:translateX(calc(28% - var(--fan-in))) translateY(8%) rotateY(-27deg) rotateZ(7deg) scale(.7)}}
+@media(max-width:760px){
+.revenue-screen-left{transform:translateX(calc(-112% + var(--fan-in) * .35)) translateY(2%) rotateY(30deg) rotateZ(-6deg) scale(.73)}
+.revenue-screen-right{transform:translateX(calc(12% - var(--fan-in) * .35)) translateY(2%) rotateY(-30deg) rotateZ(6deg) scale(.73)}
+.broadcast-art-left{transform:translateX(calc(-110% + var(--fan-in) * .35)) rotateY(30deg) rotateZ(-6deg) scale(.72)}
+.broadcast-art-right{transform:translateX(calc(10% - var(--fan-in) * .35)) rotateY(-30deg) rotateZ(6deg) scale(.72)}
+}
+@media(prefers-reduced-motion:reduce){.revenue-deck,.broadcast-stage,.revenue-heading h2,.broadcast-title>span{transform:none}.revenue-screen-center,.broadcast-art-center{transform:translateX(-50%)}}
+html[data-motion=off] .revenue-deck,html[data-motion=off] .broadcast-stage,html[data-motion=off] .revenue-heading h2,html[data-motion=off] .broadcast-title>span{transform:none}
+.fluid-image{display:block;position:relative;width:100%;height:100%;overflow:hidden}
+.revenue-screen-image .fluid-image img,.broadcast-art .fluid-image img{position:absolute;inset:0;width:100%;height:100%;animation:none;transform:none}
+.revenue-screen-image .fluid-image .fluid-image-arriving,.broadcast-art .fluid-image .fluid-image-arriving{animation:fluid-image-in .4s cubic-bezier(.2,.65,.3,1) both}
+@keyframes fluid-image-in{from{opacity:0}to{opacity:1}}
