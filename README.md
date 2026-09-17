@@ -37,7 +37,7 @@ distinction between source projects, saved versions, and deployments.
 
 ## Website implementation
 
-A complete, multi-page SONIQCX rebuild using the Scrollcraft Signal publication direction. The graphic opening leads into a native-scroll signal field that resolves into Convert, Retain, and Grow. All 47 original pages are represented, with an additional team directory and service index.
+A complete, multi-page SONIQCX rebuild using the Scrollcraft Signal publication direction. The graphic opening leads into a native-scroll signal field that resolves into Convert, Retain, and Grow. The original service and insight library remains available, with a team directory and service index. The retired SONIQ AI landing page returns 404.
 
 - `app/experience.tsx`: home page and Scrollcraft choreography.
 - `app/spectrum.tsx`: native-resolution abstract signal canvas.
@@ -48,6 +48,25 @@ A complete, multi-page SONIQCX rebuild using the Scrollcraft Signal publication 
 - `scrollcraft/builds/soniqcx-v2/`: creative brief, content map, and verification evidence.
 
 The original Scrollcraft engine is unchanged. Calendly, Voice AI, and agent/admin portals retain the original destinations. No applications or bookings were sent during testing.
+
+## Podcast and media refresh
+
+The home page now includes a performance dashboard carousel, the looping brand
+film, and a SHIFT HAPPENS thumbnail belt. The podcast page features a thumbnail
+spotlight and searchable episode collection; it never autoplays a YouTube player.
+
+`app/podcast/feed.ts` reads the official SONIQCX YouTube channel and podcast
+playlist. Requests are cached for five minutes. Visible podcast sections refresh
+on entry, every five minutes, and when the browser tab becomes active. New
+uploads appear on the next successful refresh without a site rebuild. If YouTube
+is unavailable, the last known episodes remain usable. YouTube markup changes
+may require updating the parser; `pnpm test:podcast` checks filtering, ordering,
+deduplication, caching and fallback behavior.
+
+The five supplied demo screenshots use responsive WebP images. The brand film
+loads near the viewport, pauses offscreen, and fades to black at the loop seam.
+Carousels have pause controls and respect reduced-motion preferences. See
+`scrollcraft/builds/soniqcx-media-refresh/` for the brief and verification results.
 
 ## Framework operations
 

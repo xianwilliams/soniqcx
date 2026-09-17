@@ -24,22 +24,22 @@ export function parseEpisodes(html:string,playlistIds:Set<string>=new Set()):Epi
   if(old?.videoId){const duration=old.lengthText?.simpleText||'',seconds=duration.split(':').reduce((a:number,b:string)=>a*60+Number(b),0);if(seconds>=1200||playlistIds.has(old.videoId))found.push({id:old.videoId,title:old.title?.runs?.map((r:{text:string})=>r.text).join('')||'',duration,thumbnail:old.thumbnail?.thumbnails?.at(-1)?.url})}
   Object.values(obj).forEach(walk);
  }
- walk(data);const unique=found.filter((e,i)=>found.findIndex(x=>x.id===e.id)===i).slice(0,7);if(!unique.length)throw new Error('No episodes returned');return unique;
+ walk(data);const unique=found.filter((e,i)=>found.findIndex(x=>x.id===e.id)===i).slice(0,12);if(!unique.length)throw new Error('No episodes returned');return unique;
 }
 export async function getEpisodes():Promise<EpisodeFeed>{
  if(saved&&Date.now()<expires)return saved;if(inflight)return inflight;
  inflight=(async()=>{
   try{
    const edgeCache=(globalThis as unknown as {caches?:{default?:Cache}}).caches?.default;
-   const key=new Request('https://soniqcx-experience.aballok.chatgpt.site/__podcast-cache-v1');
+   const key=new Request('https://soniqcx-experience.aballok.chatgpt.site/__podcast-cache-v2');
    const hit=await edgeCache?.match(key);if(hit){saved=await hit.json() as EpisodeFeed;expires=Date.now()+300000;return saved}
    const [channel,playlist]=await Promise.allSettled([fetch(CHANNEL,{headers:{'Accept-Language':'en-US,en;q=0.9'},signal:AbortSignal.timeout(8000)}),fetch(PLAYLIST,{headers:{'Accept-Language':'en-US,en;q=0.9'},signal:AbortSignal.timeout(8000)})]);
    if(channel.status!=='fulfilled'||!channel.value.ok)throw new Error('YouTube unavailable');const response=channel.value;
-   const playlistHtml=playlist.status==='fulfilled'&&playlist.value.ok?await playlist.value.text():'';const playlistIds=new Set(Array.from(playlistHtml.matchAll(/"contentId":"([\w-]{11})"/g),m=>m[1]));
+   const playlistHtml=playlist.status==='fulfilled'&&playlist.value.ok?await playlist.value.text():'';const playlistIds=new Set(Array.from(playlistHtml.matchAll(/"(?:contentId|videoId)":"([\w-]{11})"/g),m=>m[1]));
    const html=await response.text();if(html.length>5000000)throw new Error('Channel response too large');
-   saved={episodes:parseEpisodes(html,playlistIds),fresh:true,checkedAt:new Date().toISOString()};expires=Date.now()+3600000;
-   try{await edgeCache?.put(key,Response.json(saved,{headers:{'Cache-Control':'public, max-age=3600'}}))}catch{}
+   saved={episodes:parseEpisodes(html,playlistIds),fresh:true,checkedAt:new Date().toISOString()};expires=Date.now()+300000;
+   try{await edgeCache?.put(key,Response.json(saved,{headers:{'Cache-Control':'public, max-age=300'}}))}catch{}
    return saved;
-  }catch{return {...(saved||{episodes:fallback,checkedAt:''}),fresh:false}}
+  }catch{saved={...(saved||{episodes:fallback,checkedAt:''}),fresh:false};expires=Date.now()+60000;return saved}
  })();try{return await inflight}finally{inflight=undefined}
 }

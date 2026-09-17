@@ -1,0 +1,29 @@
+{
+  "environment": "Production Worker on localhost, Lighthouse default mobile simulated throttling, 2026-09-17",
+  "results": [
+    {
+      "page": "home",
+      "performance": 91,
+      "accessibility": 100,
+      "lcp": "3.1 s",
+      "cls": "0",
+      "tbt": "0 ms"
+    },
+    {
+      "page": "podcast",
+      "performance": 90,
+      "accessibility": 100,
+      "lcp": "3.3 s",
+      "cls": "0",
+      "tbt": "0 ms"
+    },
+    {
+      "page": "why",
+      "performance": 95,
+      "accessibility": 100,
+      "lcp": "2.6 s",
+      "cls": "0",
+      "tbt": "0 ms"
+    }
+  ]
+}
