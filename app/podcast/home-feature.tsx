@@ -29,20 +29,17 @@ export default function PodcastFeature() {
     <span className="podcast-backdrop" aria-hidden="true">SHIFT</span>
     <div className="podcast-editorial">
       <div className="podcast-feature-art" onMouseEnter={() => setEngaged(true)} onMouseLeave={() => setEngaged(false)} onFocusCapture={() => setEngaged(true)} onBlurCapture={e => {if (!e.currentTarget.contains(e.relatedTarget)) setEngaged(false);}} onKeyDown={e => {if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {e.preventDefault(); tune(index + (e.key === 'ArrowRight' ? 1 : -1));}}} onPointerDown={e => {if(e.pointerType !== 'mouse') touch.current={x:e.clientX,y:e.clientY};}} onPointerCancel={() => {touch.current=null;}} onPointerUp={e => {const start=touch.current;touch.current=null;if(start && Math.abs(e.clientX-start.x)>45 && Math.abs(e.clientX-start.x)>Math.abs(e.clientY-start.y)) tune(index+(e.clientX<start.x?1:-1));}}>
-        <div className="podcast-poster-stack">
-          <span className="podcast-paper-shadow" aria-hidden="true"/>
-          <a className="podcast-poster" href={watch} target="_blank" rel="noreferrer">
-            <div className="poster-masthead"><img src="/assets/shift-happens-small.webp" alt="SHIFT HAPPENS, hosted by SONIQCX" width="240" height="240" loading="lazy"/><span>Cool people.<br/>Big ideas.<i>Real conversations.</i></span></div>
-            <div className="poster-episode"><span>{index===0 ? 'The latest conversation' : 'From the conversation'}</span><span>{String(index+1).padStart(2,'0')} / {String(episodes.length).padStart(2,'0')}</span></div>
-            <div className="poster-thumbnail"><FluidImage src={thumbnail(episode)} alt="" width="720" height="405" loading="lazy" decoding="async"/><span className="poster-play"><Play size={24} fill="currentColor"/></span><span className="poster-duration">{episode.duration}</span></div>
-            <h3 key={episode.id}>{episode.title}</h3>
-            <div className="poster-footer"><span>Watch the conversation<span className="sr-only"> on YouTube</span></span><ArrowUpRight size={23}/></div>
-          </a>
-        </div>
-        <div className="podcast-poster-controls"><span>Fresh perspectives. On repeat.</span><div className="instrument-arrows"><button aria-label="Previous episode" onClick={() => tune(index-1)}><ChevronLeft size={19}/></button><button aria-label="Next episode" onClick={() => tune(index+1)}><ChevronRight size={19}/></button><button aria-label={paused?'Resume episode rotation':'Pause episode rotation'} aria-pressed={paused} onClick={() => setPaused(p=>!p)}>{paused?<Play size={15}/>:<Pause size={15}/>}</button></div></div>
+        <div className="podcast-screen-meta"><span>{index===0 ? 'Latest episode' : 'In the conversation'}</span><span>SHIFT HAPPENS / {episode.duration}</span></div>
+        <a className="podcast-video-screen" href={watch} target="_blank" rel="noreferrer" aria-label={`Watch episode: ${episode.title} on YouTube`}>
+          <FluidImage src={thumbnail(episode)} alt="" width="720" height="405" loading="lazy" decoding="async"/>
+          <span className="podcast-screen-play"><Play size={27} fill="currentColor"/></span>
+          <span className="podcast-screen-watch" aria-hidden="true">Watch episode<ArrowUpRight size={16}/></span>
+        </a>
+        <div className="podcast-screen-caption"><h3 key={episode.id}><a href={watch} target="_blank" rel="noreferrer">{episode.title}</a></h3><div className="instrument-arrows"><button aria-label="Previous episode" onClick={() => tune(index-1)}><ChevronLeft size={19}/></button><button aria-label="Next episode" onClick={() => tune(index+1)}><ChevronRight size={19}/></button><button aria-label={paused?'Resume episode rotation':'Pause episode rotation'} aria-pressed={paused} onClick={() => setPaused(p=>!p)}>{paused?<Play size={15}/>:<Pause size={15}/>}</button></div></div>
+        <div className="podcast-episode-rail" role="group" aria-label="Choose a podcast episode">{episodes.slice(Math.floor(index/4)*4,Math.floor(index/4)*4+4).map(ep=><button key={ep.id} aria-label={`Select ${ep.title}`} aria-pressed={ep.id===episode.id} onClick={()=>tune(episodes.findIndex(item=>item.id===ep.id))}><img src={thumbnail(ep)} alt="" width="720" height="405" loading="lazy" decoding="async"/><span aria-hidden="true"><Play size={14} fill="currentColor"/></span></button>)}</div>
       </div>
       <div className="podcast-editorial-copy">
-        <p className="experience-eyebrow">04 / The SONIQCX podcast</p>
+        <div className="podcast-show-brand"><img src="/assets/shift-happens-small.webp" alt="SHIFT HAPPENS, hosted by SONIQCX" width="240" height="240" loading="lazy"/><span>The SONIQCX podcast<small>Fresh perspectives. Real conversations.</small></span></div>
         <Waveform/>
         <h2 id="home-podcast-title"><span>Cool people.</span><span>Big ideas.</span><em>Shift happens.</em></h2>
         <p className="podcast-editorial-description">Unfiltered conversations with the people moving business forward. Leadership, customer experience, and what comes next.</p>

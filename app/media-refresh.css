@@ -25,3 +25,7 @@
 @media(prefers-reduced-motion:reduce){.broadcast-wave i{animation:none}.spotlight-thumb{transition:none}}
 html[data-motion=off] .belt-window{overflow-x:auto;perspective:none}html[data-motion=off] .belt-cylinder{display:flex;align-items:center;gap:20px;animation:none;transform:none!important}html[data-motion=off] .belt-card{position:relative;left:auto;top:auto;transform:none;flex-shrink:0}html[data-motion=off] .broadcast-wave i{animation:none}
 .close-wordmark{color:#628794}.close-wordmark span{color:#81b2c2}.hero-orbit:before{border-radius:0;inset:0;background:radial-gradient(ellipse at 50% 55%,#61abbc1f,transparent 60%)}
+/* Small optical alignment: center the content in the Q's opening, not its tail. */
+.hero-cover-stage .hero-orbit{scale:.97}
+.hero-cover-stage .immersive-copy{translate:0 12px}
+@media(max-width:760px){.hero-cover-stage .immersive-copy{translate:0 7px}}
