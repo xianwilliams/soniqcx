@@ -9,12 +9,13 @@ export function useScrollStage(ref: RefObject<HTMLElement | null>, enabled: bool
     let frame = 0, previous = 0, current = 1, target = 1;
     const paint = (progress: number) => {
       const remaining = 1 - progress;
-      el.style.setProperty('--fan-in', `${remaining * 90}px`);
-      el.style.setProperty('--stage-lift', `${remaining * 32}px`);
-      el.style.setProperty('--stage-pitch', `${remaining * 9}deg`);
+      el.style.setProperty('--fan-in', `${remaining * 155}px`);
+      el.style.setProperty('--stage-lift', `${remaining * 40}px`);
+      el.style.setProperty('--stage-pitch', `${remaining * 12}deg`);
       el.style.setProperty('--stage-scale', `${.95 + progress * .05}`);
       el.style.setProperty('--title-shift', `${remaining * 22}px`);
       el.style.setProperty('--stage-opacity', `${.72 + progress * .28}`);
+      el.style.setProperty('--color-travel', `${progress * 100}%`);
       el.dataset.scVerifyState = progress.toFixed(3);
     };
     if (!enabled) { paint(1); return; }

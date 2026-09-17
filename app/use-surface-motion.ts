@@ -7,7 +7,7 @@ export function useSurfaceMotion(ref: RefObject<HTMLElement | null>, enabled: bo
     const el = ref.current;
     if (!el || !enabled || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
     let frame = 0, last = 0, x = 0, y = 0, targetX = 0, targetY = 0;
-    const paint = () => {el.style.setProperty('--tilt-x', `${y}deg`);el.style.setProperty('--tilt-y', `${x}deg`);};
+    const paint = () => {el.style.setProperty('--tilt-x', `${y}deg`);el.style.setProperty('--tilt-y', `${x}deg`);el.style.setProperty('--pointer-tone', `${x * 15}%`);};
     const tick = (time: number) => {
       frame = 0;
       const dt = last ? Math.min(time - last, 50) : 16;
