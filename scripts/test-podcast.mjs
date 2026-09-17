@@ -44,6 +44,10 @@ try {
   const rssResult=await rssModule.getEpisodes();
   assert.equal(rssResult.fresh,true);
   assert.equal(rssResult.episodes[0].id,latest);
+  globalThis.caches={default:{match:async()=>{throw new Error('Cache unavailable')},put:async()=>{throw new Error('Cache unavailable')}}};
+  const noCache=await import(moduleURL+'#no-cache');
+  assert.equal((await noCache.getEpisodes()).fresh,true,'Cache failure must not prevent RSS refresh');
+  delete globalThis.caches;
   const isolated = await import(moduleURL + '#offline');
   globalThis.fetch = async () => {throw new Error('offline');};
   const offline = await isolated.getEpisodes();

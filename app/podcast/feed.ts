@@ -41,7 +41,7 @@ export function parsePodcastRSS(channel:string,playlist:string,known:Episode[]=f
  // Keep the known archive between recent uploads and older playlist-only items.
  return [...recent.map(toEpisode),...known,...official.map(toEpisode)].filter((e,i,all)=>all.findIndex(x=>x.id===e.id)===i).slice(0,12);
 }
-async function readFeed(url:string){const r=await fetch(url,{signal:AbortSignal.timeout(8000)});if(!r.ok)throw new Error('Podcast feed unavailable');return r.text()}
+async function readFeed(url:string){const r=await fetch(url,{signal:AbortSignal.timeout(8000)});if(!r.ok)throw new Error('YouTube feed returned '+r.status);return r.text()}
 async function loadEpisodes():Promise<Episode[]>{
  try{
   const [channel,playlist]=await Promise.allSettled([readFeed(CHANNEL),readFeed(PLAYLIST)]);
@@ -55,6 +55,7 @@ async function loadEpisodes():Promise<Episode[]>{
    readFeed('https://www.youtube.com/feeds/videos.xml?channel_id=UCsgJv-p60QdrD4TzcusnzQQ'),
    readFeed('https://www.youtube.com/feeds/videos.xml?playlist_id=PL-zZGNV-urVSNmg0T2NPkx8Q_v9OFP-76')
   ]);
+  if(channel.status==='rejected'&&playlist.status==='rejected')throw new Error('Both YouTube feeds failed: '+String(channel.reason)+'; '+String(playlist.reason));
   return parsePodcastRSS(channel.status==='fulfilled'?channel.value:'',playlist.status==='fulfilled'?playlist.value:'',saved?.episodes||fallback);
  }
 }
@@ -63,12 +64,12 @@ export async function getEpisodes():Promise<EpisodeFeed>{
  inflight=(async()=>{
   try{
    const edgeCache=(globalThis as unknown as {caches?:{default?:Cache}}).caches?.default;
-   const key=new Request('https://soniqcx-experience.aballok.chatgpt.site/__podcast-cache-v3');
-   const hit=await edgeCache?.match(key);if(hit){saved=await hit.json() as EpisodeFeed;expires=Date.now()+300000;return saved}
+   const key=new Request('https://soniqcx-experience.aballok.chatgpt.site/__podcast-cache-v4');
+   let hit:Response|undefined;try{hit=await edgeCache?.match(key)}catch{/* Cache availability must never block a live refresh. */}if(hit){saved=await hit.json() as EpisodeFeed;expires=Date.now()+300000;return saved}
    const episodes=await loadEpisodes();
    saved={episodes,fresh:true,checkedAt:new Date().toISOString()};expires=Date.now()+300000;
    try{await edgeCache?.put(key,Response.json(saved,{headers:{'Cache-Control':'public, max-age=300'}}))}catch{}
    return saved;
-  }catch{saved={...(saved||{episodes:fallback,checkedAt:''}),fresh:false};expires=Date.now()+60000;return saved}
+  }catch(error){console.warn('Podcast refresh unavailable',error instanceof Error?error.message:'unknown');saved={...(saved||{episodes:fallback,checkedAt:''}),fresh:false};expires=Date.now()+60000;return saved}
  })();try{return await inflight}finally{inflight=undefined}
 }
