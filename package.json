@@ -1,0 +1,19 @@
+{
+  "name": "soniqcx-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "mirror": "node scripts/mirror-site.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.3",
+    "@types/react": "19.3.0",
+    "next": "^16.3.5",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "7.0.2"
+  }
+}
