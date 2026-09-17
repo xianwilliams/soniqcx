@@ -56,7 +56,8 @@ film, and a SHIFT HAPPENS thumbnail belt. The podcast page features a thumbnail
 spotlight and searchable episode collection; it never autoplays a YouTube player.
 
 `app/podcast/feed.ts` reads the official SONIQCX YouTube channel and podcast
-playlist. Requests are cached for five minutes. Visible podcast sections refresh
+playlist, with official Atom feeds as a fallback when YouTube blocks HTML
+requests from the hosting network. Requests are cached for five minutes. Visible podcast sections refresh
 on entry, every five minutes, and when the browser tab becomes active. New
 uploads appear on the next successful refresh without a site rebuild. If YouTube
 is unavailable, the last known episodes remain usable. YouTube markup changes

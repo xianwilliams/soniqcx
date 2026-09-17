@@ -33,3 +33,7 @@ Podcast feed checks run on entry, every five minutes while visible, and when the
 tab becomes active. Edge/server caching also lasts five minutes. YouTube outages
 retain known episodes. New uploads do not require rebuilding. Optimized existing
 thumbnail files are snapshots; newly discovered episodes use live YouTube images.
+
+Live verification identified YouTube HTML fetch rejection on the hosting network.
+Added official channel and playlist Atom feed fallback, with tests for episode
+selection, XML entities, HTML rejection and RSS success.

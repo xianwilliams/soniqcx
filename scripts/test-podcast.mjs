@@ -7,7 +7,7 @@ const source = readFileSync(new URL('../app/podcast/feed.ts', import.meta.url), 
   .replace("import fallback from './episodes.json';", `const fallback = ${readFileSync(new URL('../app/podcast/episodes.json', import.meta.url), 'utf8')};`);
 const code = ts.transpileModule(source, {compilerOptions: {module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022}}).outputText;
 const moduleURL = `data:text/javascript;base64,${Buffer.from(code).toString('base64')}`;
-const {parseEpisodes, getEpisodes} = await import(moduleURL);
+const {parseEpisodes, parsePodcastRSS, getEpisodes} = await import(moduleURL);
 const video = (id, duration = '30:00') => ({lockupViewModel: {
   contentType: 'LOCKUP_CONTENT_TYPE_VIDEO', contentId: id,
   metadata: {lockupMetadataViewModel: {title: {content: `Episode ${id}`}}},
@@ -22,6 +22,12 @@ assert.throws(() => parseEpisodes('Unavailable'), /unavailable/);
 assert.throws(() => parseEpisodes(html([video(short, '0:45')])), /No episodes/);
 const legacy = html({videoRenderer: {videoId: previous, title: {runs: [{text: 'Older episode'}]}, lengthText: {simpleText: '24:10'}, thumbnail: {thumbnails: [{url: `https://i.ytimg.com/vi/${previous}/hqdefault.jpg`}]}}});
 assert.equal(parseEpisodes(legacy)[0].title, 'Older episode');
+const entry=(id,title,description='')=>`<entry><yt:videoId>${id}</yt:videoId><title>${title}</title><media:description>${description}</media:description></entry>`;
+const rss=entry(latest,'New &amp; interesting','In this episode, we discuss growth')+entry(short,'A short clip','Leadership advice');
+assert.deepEqual(parsePodcastRSS(rss,'',[]).map(e=>e.id),[latest]);
+assert.equal(parsePodcastRSS(rss,'',[])[0].title,'New & interesting');
+assert.deepEqual(parsePodcastRSS(rss,entry(short,'Official episode'),[]).map(e=>e.id),[latest,short]);
+assert.throws(()=>parsePodcastRSS('Unavailable','',[]),/unavailable/);
 const originalFetch = globalThis.fetch;
 let requests = 0;
 try {
@@ -33,6 +39,11 @@ try {
   assert.deepEqual(first, second);
   await getEpisodes();
   assert.equal(requests, 2, 'Concurrent and cached reads must not refetch YouTube');
+  const rssModule=await import(moduleURL+'#rss');
+  globalThis.fetch=async url=>new Response(String(url).includes('channel_id=')?rss:String(url).includes('playlist_id=')?entry(short,'Official episode'):'Blocked', {status:String(url).includes('/feeds/')?200:429});
+  const rssResult=await rssModule.getEpisodes();
+  assert.equal(rssResult.fresh,true);
+  assert.equal(rssResult.episodes[0].id,latest);
   const isolated = await import(moduleURL + '#offline');
   globalThis.fetch = async () => {throw new Error('offline');};
   const offline = await isolated.getEpisodes();
