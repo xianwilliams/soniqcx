@@ -7,7 +7,7 @@ import ToneHeading from '../tone-heading';
 import {Close} from '../chrome';
 import {useAmbient} from '../use-ambient';
 import {useEpisodeFeed} from './use-feed';
-import {Waveform} from './episode-belt';
+import {Waveform} from './waveform';
 const CHANNEL = 'https://www.youtube.com/@SoniqCX';
 export default function Podcast() {
   const {ref, visible, moving} = useAmbient<HTMLElement>();

@@ -51,8 +51,10 @@ The original Scrollcraft engine is unchanged. Calendly, Voice AI, and agent/admi
 
 ## Podcast and media refresh
 
-The home page now includes a performance dashboard carousel, the looping brand
-film, and a SHIFT HAPPENS thumbnail belt. The podcast page features a thumbnail
+The home page includes a full-width performance screen stage, the looping brand
+film, and a SHIFT HAPPENS broadcast deck with a selectable waveform tuner.
+The stages support pointer depth, keyboard selection, pause controls and
+responsive phone layouts; the podcast deck also supports swipe. The podcast page features a thumbnail
 spotlight and searchable episode collection; it never autoplays a YouTube player.
 
 `app/podcast/feed.ts` reads the official SONIQCX YouTube channel and podcast
