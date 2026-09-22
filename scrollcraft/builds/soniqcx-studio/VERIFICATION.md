@@ -51,3 +51,11 @@ smoke test cannot prove visual polish or interaction geometry.
 
 No generated images, new packages, changed authentication or audience changes.
 The original Scrollcraft engine and publishing framework remain untouched.
+
+## Public deployment
+
+The existing public Site accepted the built archive and reported a successful
+deployment. Its `/api/podcast` returned fresh YouTube content. Sites serves WebP
+with `application/octet-stream`; the smoke test now verifies RIFF/WEBP payload
+signatures directly rather than relying on the header. This also rejects HTML
+error pages incorrectly returned with status 200.

@@ -24,8 +24,11 @@ assert.match(pageRule[1], /display:\s*block/, 'The podcast sections must stack, 
 for (const path of ['/assets/episode-YK89SMqFlFY.webp', '/assets/pulse-3-800.webp', '/assets/pulse-3-1440.webp']) {
   const response = await fetch(new URL(path, origin));
   assert.equal(response.status, 200, `${path} must load`);
-  assert.match(response.headers.get('content-type') || '', /image\//);
-  await response.body.cancel();
+  // Sites may use application/octet-stream for WebP. Check the actual payload
+  // so a 200 HTML error page can never count as a successfully loaded image.
+  const bytes = Buffer.from(await response.arrayBuffer());
+  assert.equal(bytes.toString('ascii', 0, 4), 'RIFF', `${path} must contain image bytes`);
+  assert.equal(bytes.toString('ascii', 8, 12), 'WEBP', `${path} must be a WebP image`);
 }
 const home = await read('/');
 assert.match(home, /SONIQ PULSE product screenshots/);
