@@ -8,19 +8,23 @@ export function useEpisodeFeed(visible: boolean, initial: EpisodeFeed = initialF
   useEffect(() => {
     if (!visible) return;
     const abort = new AbortController();
+    let refreshing = false;
     const refresh = async () => {
-      if (document.hidden) return;
+      if (document.hidden || refreshing) return;
+      refreshing = true;
       try {
-        const response = await fetch('/api/podcast', {signal: abort.signal});
+        const response = await fetch('/api/podcast', {signal: abort.signal, cache: 'no-store'});
         if (!response.ok) return;
         const data = await response.json() as EpisodeFeed;
         if (data.episodes?.length) setFeed(data);
       } catch { /* The last known episodes stay usable when YouTube is unavailable. */ }
+      finally { refreshing = false; }
     };
     void refresh();
     const timer = setInterval(refresh, 300000);
     document.addEventListener('visibilitychange', refresh);
-    return () => { clearInterval(timer); abort.abort(); document.removeEventListener('visibilitychange', refresh); };
+    window.addEventListener('online', refresh);
+    return () => { clearInterval(timer); abort.abort(); document.removeEventListener('visibilitychange', refresh); window.removeEventListener('online', refresh); };
   }, [visible]);
   return feed;
 }

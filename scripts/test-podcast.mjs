@@ -55,3 +55,14 @@ try {
   assert.ok(offline.episodes.length > 0, 'An upstream outage must retain clickable episodes');
 } finally {globalThis.fetch = originalFetch;}
 console.log('Podcast parser, official short-episode inclusion, deduplication, ordering, request coalescing, cache and outage fallback passed.');
+
+const discoverySource = readFileSync(new URL('../app/podcast/discovery.ts', import.meta.url), 'utf8');
+const discoveryCode = ts.transpileModule(discoverySource, {compilerOptions: {module: ts.ModuleKind.ESNext}}).outputText;
+const {matchesEpisode} = await import(`data:text/javascript;base64,${Buffer.from(discoveryCode).toString('base64')}`);
+assert.equal(matchesEpisode({title: 'Clancey Dollard Discussing AI in Contact Centers'}, ' clancey ', 'AI & technology'), true);
+assert.equal(matchesEpisode({title: 'Building a Personal Brand'}, '', 'Business & growth'), true);
+assert.equal(matchesEpisode({title: 'Contact Center Culture'}, '', 'People & culture'), true);
+assert.equal(matchesEpisode({title: 'Finance for Business'}, '', 'AI & technology'), false, 'AI must match a word, not letters within a word');
+assert.equal(matchesEpisode({title: 'New conversation'}, '', 'All conversations'), true, 'New uploads must be discoverable without curated metadata');
+assert.equal(matchesEpisode({title: 'Contact Center Culture'}, 'missing guest', 'People & culture'), false);
+console.log('Podcast topic and search filtering passed.');

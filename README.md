@@ -72,6 +72,22 @@ loads near the viewport, pauses offscreen, and fades to black at the loop seam.
 Carousels have pause controls and respect reduced-motion preferences. See
 `scrollcraft/builds/soniqcx-media-refresh/` for the brief and verification results.
 
+The podcast page now uses route-scoped CSS Modules to prevent homepage styles
+from changing its layout. The thumbnail spotlight has previous/next controls,
+an episode dial and direct selections; search and topic filters narrow the
+collection. Episodes open on YouTube only after a click. Automatic feed checks
+continue throughout the podcast page, on tab return and network reconnection.
+
+The Performance Based CX section uses the supplied product screenshots in a
+glass-framed perspective carousel, with separate orbital and particle layers.
+Manual selection pauses rotation. Keyboard arrows, touch swipes, a pause control
+and full-resolution screenshot dialogs are supported. Motion preferences disable
+automatic rotation and decorative motion while keeping controls usable.
+
+After `pnpm build`, run `pnpm start --port 8788`, then
+`node scripts/test-experiences.mjs` to check the actual production Worker's
+podcast layout isolation, thumbnail-only behavior, controls and media assets.
+
 ## Framework operations
 
 # vinext-starter
