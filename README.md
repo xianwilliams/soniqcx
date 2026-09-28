@@ -1,5 +1,40 @@
 # SONIQCX experience
 
+## Run locally with Next.js
+
+The source was checked against published Sites version 21, commit
+`7c78723327e71e8186044d8b39aa5b7ea5514c80`. All 49 files in `public/`,
+including fonts, images and the brand video, are tracked locally. The pages use
+the Next.js App Router and can run directly on Next.js 16.2.6.
+
+With Node.js 22.13 or newer and pnpm installed:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm dev:next
+```
+
+Open http://localhost:3000. To build and preview the production Next.js server:
+
+```sh
+pnpm build:next
+pnpm start:next
+```
+
+The existing `dev`, `build`, and `start` commands retain the Vinext/Cloudflare
+workflow required by the published Site. Both workflows use the same application
+source. Next.js builds into `.next/`; Sites builds into `dist/`.
+
+The podcast feed, YouTube thumbnails/playback, Calendly, Voice AI, recruitment
+submission service and external portals still require internet access. The
+podcast has a bundled fallback episode list. Local testing should not submit a
+real application or booking unless intended.
+
+The `origin` remote is `https://github.com/xianwilliams/soniqcx.git`.
+Preparing or running this checkout does not push to GitHub or republish the Site.
+Review and commit local changes before a future push. Keep `.env` files,
+credentials, `node_modules/`, `.next/`, `dist/` and local runtime state out of Git.
+
 ## One source for VS Code and Sites
 
 This checkout contains the original editable source for
@@ -50,6 +85,21 @@ A complete, multi-page SONIQCX rebuild using the Scrollcraft Signal publication 
 The original Scrollcraft engine is unchanged. Calendly, Voice AI, and agent/admin portals retain the original destinations. No applications or bookings were sent during testing.
 
 ## Podcast and media refresh
+
+The `/team` header uses the supplied `SONIQCX_HEROVID.mp4` as a muted
+18-second loop with a 0.75-second crossfade across the loop seam. Web copies
+are tracked in `public/assets/team-hero*.mp4`: 1600×900 for desktop and a
+720×900 center crop for phones. Both use H.264, 24 fps, no audio, and fast-start
+MP4 metadata. The original recording remains on the supplied external drive.
+WebP posters hold when reduced motion is enabled or playback is unavailable.
+The header has a pause/play control and pauses when offscreen or backgrounded.
+The header reuses the original inner-page dimensions, typography and responsive
+spacing. The gradient darkens the left side behind the copy, with extra contrast
+on phones; it does not expand the header to the viewport height.
+
+Desktop and hamburger menus share `primaryNavigation` in `app/chrome.tsx`.
+Their seven links and call action match; the footer retains its broader page
+directory. Run `pnpm test:navigation` to check labels, order and destinations.
 
 The home page includes a full-width performance screen stage, the looping brand
 film, and a SHIFT HAPPENS broadcast deck with a selectable waveform tuner.

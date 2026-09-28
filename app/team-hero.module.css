@@ -1,0 +1,59 @@
+.hero {
+  background: #0c0c0c;
+  color: #f8f9fa;
+}
+
+.poster, .video, .scrim {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.poster img, .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.scrim {
+  background: linear-gradient(90deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.76) 34%, rgba(0,0,0,.28) 66%, rgba(0,0,0,.06) 100%);
+}
+
+.description {
+  color: #f0f2f3;
+}
+
+.control {
+  position: absolute;
+  z-index: 1;
+  right: 6.1%;
+  bottom: 30px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #ffffff80;
+  border-radius: 4px;
+  background: #000b;
+  color: #fff;
+  font-size: .875rem;
+}
+
+.control:hover { background: #000e; }
+.control:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
+
+@media (max-width: 760px) {
+  .poster img, .video { object-position: center 30%; }
+
+  .scrim {
+    background:
+      linear-gradient(0deg, rgba(0,0,0,.7), transparent 75%),
+      linear-gradient(90deg, rgba(0,0,0,.88), rgba(0,0,0,.62) 70%, rgba(0,0,0,.3));
+  }
+  .control { bottom: 12px; }
+}
