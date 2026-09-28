@@ -86,7 +86,7 @@ The original Scrollcraft engine is unchanged. Calendly, Voice AI, and agent/admi
 
 ## Podcast and media refresh
 
-The `/team` header uses the supplied `SONIQCX_HEROVID.mp4` as a muted
+The `/about` header uses the supplied `SONIQCX_HEROVID.mp4` as a muted
 18-second loop with a 0.75-second crossfade across the loop seam. Web copies
 are tracked in `public/assets/team-hero*.mp4`: 1600×900 for desktop and a
 720×900 center crop for phones. Both use H.264, 24 fps, no audio, and fast-start
