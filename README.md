@@ -140,6 +140,13 @@ podcast layout isolation, thumbnail-only behavior, controls and media assets.
 
 ## Framework operations
 
+### Vercel deployment
+
+`vercel.json` selects the Next.js preset, runs `pnpm run build:next`, and uses
+`.next` as the output directory. The default `pnpm build` remains the
+Vinext/Cloudflare build for Sites and produces `dist`; it is not the Vercel build.
+Keep the Vercel project's root directory at this repository root.
+
 # vinext-starter
 
 A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.
